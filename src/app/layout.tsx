@@ -7,6 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Code Complexity Analyzer | Senior Full-Stack Tool",
   description: "Analyze code complexity, cyclomatic metrics, and nesting depth using real AST parsing.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
