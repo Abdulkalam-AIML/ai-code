@@ -79,8 +79,8 @@ export default function AnalysisDashboard() {
             <div className="absolute inset-0 bg-violet-500/20 blur-2xl rounded-full" />
             <div className="relative bg-slate-900 border-2 border-slate-800 p-4 rounded-2xl flex items-center justify-center group hover:border-violet-500/50 transition-colors duration-500">
               <div className="flex items-center gap-3">
-                <div className="bg-gradient-to-br from-violet-500 to-blue-600 p-2.5 rounded-xl shadow-lg shadow-violet-500/20">
-                  <Code2 className="w-8 h-8 text-white" />
+                <div className="bg-gradient-to-br from-violet-500 to-blue-600 p-0.5 rounded-xl shadow-lg shadow-violet-500/20 overflow-hidden">
+                  <img src="/logo.png" alt="CODEX Logo" className="w-12 h-12 object-cover" />
                 </div>
                 <div className="flex flex-col items-start leading-none">
                   <span className="text-2xl font-black italic tracking-tighter bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
