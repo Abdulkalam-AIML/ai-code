@@ -1,6 +1,9 @@
 // Note: In a real serverless environment, we might use a python runtime if available.
 // However, to keep it "Fully on Vercel" without external backends, we use a JS-based Python parser.
-import { analyze } from 'py-ast';
+// @ts-ignore
+import * as pyast from 'py-ast';
+
+const analyze = (pyast as any)?.analyze || (pyast as any)?.default?.analyze;
 
 export interface AnalysisResult {
     cyclomaticComplexity: number;
@@ -19,6 +22,9 @@ export function analyzePython(code: string): AnalysisResult {
     const suggestions: string[] = [];
 
     try {
+        if (typeof analyze !== 'function') {
+            throw new Error("Python parser not properly initialized.");
+        }
         // py-ast is a lightweight parser that mimics the Python AST structure
         const ast = analyze(code);
 
